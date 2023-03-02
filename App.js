@@ -11,6 +11,11 @@ export default function BestFuelApp() {
   const inputRef = useRef(null);
 
   function handleCalcular() {
+    if (!precoAlcool || !precoGasolina) {
+      alert('É necessário informar os dois valores!');
+      return;
+    }
+
     handleAbrirModal();
   }
 
@@ -34,7 +39,7 @@ export default function BestFuelApp() {
       style={styles.container}
       behavior={Platform.OS == "ios" ? "padding" : "height"}
     >
-      <ScrollView >
+      <ScrollView  >
 
         <View style={styles.areaLogo}>
           <Image
